@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACCESS RESTRICTED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Page d'accès avec mot de passe -->
+  <div id="login-page">
+    <div class="login-container">
+      <h1 class="glitch" data-text="ACCESS RESTRICTED">ACCESS RESTRICTED</h1>
+      <p>Enter Password to Access</p>
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="verifyPassword()">Enter</button>
+    </div>
+  </div>
+
+  <!-- Simulation de décryptage -->
+  <div id="decrypt-page">
+    <div class="decrypt-container">
+      <h1 class="decrypt-title">Decrypting...</h1>
+      <div class="loading-bar">
+        <div class="progress"></div>
+      </div>
+      <p class="decrypt-text">Attempting to bypass encryption...</p>
+      <p id="decrypt-log" class="decrypt-log"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

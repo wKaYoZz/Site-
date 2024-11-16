@@ -1,0 +1,138 @@
+/* Styles de base */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d0d0d;
+  color: #00ffcc;
+  overflow: hidden;
+}
+
+h1, p {
+  color: #00ffcc;
+}
+
+/* Glitch effect */
+.glitch {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  position: relative;
+  animation: glitch-animation 2s infinite;
+  text-transform: uppercase;
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  color: #ff00cc;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch-animation 2s infinite;
+}
+
+.glitch:before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+}
+
+.glitch:after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+}
+
+@keyframes glitch-animation {
+  0% { clip: rect(10px, 9999px, 60px, 0); transform: skew(0.5deg); }
+  10% { clip: rect(100px, 9999px, 30px, 0); transform: skew(0.5deg); }
+  20% { clip: rect(90px, 9999px, 40px, 0); transform: skew(0.5deg); }
+  100% { clip: rect(100px, 9999px, 60px, 0); transform: skew(0.5deg); }
+}
+
+/* Page de connexion */
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.login-container {
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.login-container input {
+  background: #333;
+  color: #00ffcc;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.login-container button {
+  background: #00ffcc;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background: #ff00cc;
+}
+
+/* Page de décryptage */
+#decrypt-page {
+  display: none;
+  text-align: center;
+  color: #00ffcc;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.decrypt-container {
+  animation: fadeIn 1s ease;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 10px;
+  background: #333;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: #00ffcc;
+  animation: load 10s linear infinite;
+  border-radius: 5px;
+}
+
+@keyframes load {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.decrypt-text, .decrypt-log {
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ffcc;
+  animation: glitch-animation 3s infinite;
+}
